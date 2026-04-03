@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ambroise Col</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ambroise.col</a>
+  <ul class="nav-links">
+    <li><a href="index.html">~/</a></li>
+    <li><a href="bts.html">/bts</a></li>
+    <li><a href="documentation.html">/documentation</a></li>
+    <li><a href="veilles.html">/veilles</a></li>
+    <li><a href="contact.html" class="active">/contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="breadcrumb">~/contact</div>
+    <h1>Contact<br><span style="font-style:italic;color:var(--fg-muted);">Ambroise Col.</span></h1>
+  </div>
+
+  <section class="page-section">
+    <div class="section-label">// me contacter</div>
+    <p style="font-size:15px;color:var(--fg-muted);font-weight:300;max-width:500px;line-height:1.8;margin-bottom:2.5rem;">
+      À la recherche d'un stage ou d'une alternance en infrastructure réseau &amp; systèmes.
+    </p>
+
+    <div class="contact-links reveal" style="max-width:560px;">
+      <a href="mailto:ambroise.col@email.com" class="contact-link">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">ambroise.col@email.com</span>
+      </a>
+      <a href="https://linkedin.com" class="contact-link" target="_blank">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">linkedin.com/in/ambroise-col</span>
+      </a>
+      <a href="https://github.com" class="contact-link" target="_blank">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-value">github.com/ambroise-col</span>
+      </a>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="#" class="btn btn-primary" onclick="return false;">curl -O cv-ambroise-col.pdf ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Ambroise Col · BTS SIO SISR</p>
+  <p style="color:var(--green);opacity:0.55;">Île-de-France</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:0.07});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

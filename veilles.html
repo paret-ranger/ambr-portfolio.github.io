@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veilles — Ambroise Col</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .veille-item {
+    background: var(--surface); padding: 1.75rem 2.25rem;
+    position: relative; overflow: hidden;
+    text-decoration: none; color: inherit;
+    transition: background 0.2s;
+    display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start;
+  }
+  .veille-item:hover { background: var(--bg3); }
+  .veille-item:first-child { border-radius: 16px 16px 0 0; }
+  .veille-item:last-child  { border-radius: 0 0 16px 16px; }
+  .veille-item::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--amber); opacity: 0; transition: opacity 0.2s;
+  }
+  .veille-item:hover::before { opacity: 1; }
+  .veille-title { font-size: 1rem; font-weight: 400; margin-bottom: 0.35rem; }
+  .veille-desc  { font-size: 13px; color: var(--fg-muted); font-weight: 300; line-height: 1.65; margin-bottom: 0.65rem; }
+  .veille-date  { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-faint); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ambroise.col</a>
+  <ul class="nav-links">
+    <li><a href="index.html">~/</a></li>
+    <li><a href="bts.html">/bts</a></li>
+    <li><a href="documentation.html">/documentation</a></li>
+    <li><a href="veilles.html" class="active">/veilles</a></li>
+    <li><a href="contact.html">/contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="breadcrumb">~/veilles</div>
+    <h1>Veilles<br><span style="font-style:italic;color:var(--fg-muted);">informatiques.</span></h1>
+  </div>
+
+  <section class="page-section">
+    <div class="section-label">// cybersécurité</div>
+    <div class="list-rows reveal">
+
+      <div class="veille-item">
+        <div>
+          <div class="veille-title">Évolution des attaques par ransomware en 2024</div>
+          <div class="veille-desc">Analyse des nouvelles techniques utilisées par les groupes de ransomware : double extorsion, ciblage des sauvegardes et attaques supply-chain.</div>
+          <div class="tag-row"><span class="tag hi-amber">Ransomware</span><span class="tag hi-amber">Cybersécurité</span><span class="tag">Supply chain</span></div>
+        </div>
+        <div class="veille-date">Jan 2024</div>
+      </div>
+
+      <div class="veille-item">
+        <div>
+          <div class="veille-title">Vulnérabilités dans les équipements réseau Cisco</div>
+          <div class="veille-desc">Suivi des CVE critiques publiés sur les routeurs et switchs Cisco IOS XE, avec analyse des vecteurs d'attaque et des correctifs disponibles.</div>
+          <div class="tag-row"><span class="tag hi-amber">CVE</span><span class="tag">Cisco</span><span class="tag">Patch management</span></div>
+        </div>
+        <div class="veille-date">Mar 2024</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-label">// réseaux & infrastructure</div>
+    <div class="list-rows reveal">
+
+      <div class="veille-item">
+        <div>
+          <div class="veille-title">Le protocole Wi-Fi 7 (802.11be) : apports et déploiement</div>
+          <div class="veille-desc">Présentation des améliorations apportées par le Wi-Fi 7 : multi-link operation (MLO), bandes 6 GHz, débit théorique et impact sur les architectures réseau d'entreprise.</div>
+          <div class="tag-row"><span class="tag hi-green">WiFi 7</span><span class="tag hi-green">802.11be</span><span class="tag">Réseaux sans fil</span></div>
+        </div>
+        <div class="veille-date">Fév 2024</div>
+      </div>
+
+      <div class="veille-item">
+        <div>
+          <div class="veille-title">Conteneurisation avec Docker en production</div>
+          <div class="veille-desc">Bonnes pratiques pour le déploiement de conteneurs Docker en environnement de production : sécurisation des images, gestion des volumes et supervision.</div>
+          <div class="tag-row"><span class="tag hi-green">Docker</span><span class="tag">Conteneurisation</span><span class="tag">DevOps</span></div>
+        </div>
+        <div class="veille-date">Avr 2024</div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Ambroise Col · BTS SIO SISR</p>
+  <p style="color:var(--green);opacity:0.55;">Île-de-France</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:0.07});
+  document.querySelectorAll('.reveal, .veille-item').forEach(el => { if(!el.classList.contains('reveal')) el.classList.add('reveal'); obs.observe(el); });
+</script>
+</body>
+</html>

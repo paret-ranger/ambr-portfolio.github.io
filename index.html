@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambroise Col — Portfolio BTS SIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ambroise.col</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">~/</a></li>
+    <li><a href="bts.html">/bts</a></li>
+    <li><a href="documentation.html">/documentation</a></li>
+    <li><a href="veilles.html">/veilles</a></li>
+    <li><a href="contact.html">/contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="terminal-prompt">
+        <span class="path">sisr@bts-sio:~$</span>
+        <span>cat infos.txt</span>
+        <span class="cursor"></span>
+      </div>
+
+      <h1>
+        Ambroise Col<br>
+        <span class="accent">étudiant sisr.</span>
+      </h1>
+
+      <p class="hero-sub">
+        BTS SIO · Option SISR<br>
+        Infrastructure réseau, administration système &amp; cybersécurité.
+      </p>
+
+      <div class="hero-badge">SISR — Solutions d'Infrastructure, Systèmes et Réseaux</div>
+
+      <div class="hero-actions">
+        <a href="bts.html" class="btn btn-primary">./présentation.sh</a>
+        <a href="documentation.html" class="btn btn-ghost">ls /documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAV CARDS -->
+  <section class="page-section">
+    <div class="section-label">// navigation</div>
+    <div class="card-grid cols-3 reveal">
+
+      <a href="bts.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="skill-cat">BTS SIO</div>
+        <div class="skill-title">Présentation</div>
+        <p style="font-size:13px;color:var(--fg-muted);font-weight:300;line-height:1.65;margin-bottom:1rem;">
+          Les deux spécialités du BTS SIO, compétences et certifications d'Ambroise.
+        </p>
+        <span class="tag hi-green">SISR</span>
+        <span class="tag hi-blue" style="margin-left:4px;">SLAM</span>
+      </a>
+
+      <a href="documentation.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="skill-cat">Projets</div>
+        <div class="skill-title">Documentation</div>
+        <p style="font-size:13px;color:var(--fg-muted);font-weight:300;line-height:1.65;margin-bottom:1rem;">
+          Comptes-rendus et documentation technique des projets réalisés en formation.
+        </p>
+        <span class="tag">Infrastructure</span>
+        <span class="tag" style="margin-left:4px;">Développement</span>
+      </a>
+
+      <a href="veilles.html" class="card" style="text-decoration:none;color:inherit;">
+        <div class="skill-cat blue">Veilles</div>
+        <div class="skill-title">Veilles informatiques</div>
+        <p style="font-size:13px;color:var(--fg-muted);font-weight:300;line-height:1.65;margin-bottom:1rem;">
+          Suivi de l'actualité technique dans les domaines réseaux et cybersécurité.
+        </p>
+        <span class="tag">Réseaux</span>
+        <span class="tag hi-amber" style="margin-left:4px;">Cybersécurité</span>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Ambroise Col · BTS SIO SISR</p>
+  <p style="color:var(--green);opacity:0.55;">Île-de-France</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

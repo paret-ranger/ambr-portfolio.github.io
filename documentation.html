@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Ambroise Col</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ambroise.col</a>
+  <ul class="nav-links">
+    <li><a href="index.html">~/</a></li>
+    <li><a href="bts.html">/bts</a></li>
+    <li><a href="documentation.html" class="active">/documentation</a></li>
+    <li><a href="veilles.html">/veilles</a></li>
+    <li><a href="contact.html">/contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="breadcrumb">~/documentation</div>
+    <h1>Documentation<br><span style="font-style:italic;color:var(--fg-muted);">projets &amp; travaux.</span></h1>
+  </div>
+
+  <section class="page-section">
+    <div class="section-label">// projets sisr</div>
+    <div class="list-rows reveal">
+
+      <div class="project-item sisr">
+        <div class="proj-num g">01</div>
+        <div>
+          <div class="proj-name">Infrastructure réseau d'entreprise simulée</div>
+          <div class="proj-desc">Conception et déploiement d'une infrastructure complète sous GNS3 — routage OSPF, VLAN segmentés, DMZ et filtrage applicatif via pfSense. Documentation technique en Markdown.</div>
+          <div class="tag-row"><span class="tag hi-green">GNS3</span><span class="tag hi-green">OSPF</span><span class="tag">pfSense</span><span class="tag">VLAN</span><span class="tag">DMZ</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <div class="proj-year">2024</div>
+          <div class="spé-badge sisr">SISR</div>
+        </div>
+      </div>
+
+      <div class="project-item sisr">
+        <div class="proj-num g">02</div>
+        <div>
+          <div class="proj-name">Déploiement Active Directory avec GPO</div>
+          <div class="proj-desc">Mise en place d'un domaine AD sur Windows Server 2022 — gestion des utilisateurs, des groupes et des stratégies de groupe pour une PME de 50 postes. Scripts PowerShell d'automatisation inclus.</div>
+          <div class="tag-row"><span class="tag hi-green">PowerShell</span><span class="tag">Windows Server</span><span class="tag">AD DS</span><span class="tag">GPO</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <div class="proj-year">2024</div>
+          <div class="spé-badge sisr">SISR</div>
+        </div>
+      </div>
+
+      <div class="project-item sisr">
+        <div class="proj-num g">03</div>
+        <div>
+          <div class="proj-name">Audit de sécurité réseau</div>
+          <div class="proj-desc">Audit complet sur un réseau de test — scan de vulnérabilités Nmap, analyse de trafic Wireshark, rapport de recommandations et plan de remédiation.</div>
+          <div class="tag-row"><span class="tag hi-amber">Nmap</span><span class="tag hi-amber">Wireshark</span><span class="tag">Cybersécurité</span><span class="tag">Rapport</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <div class="proj-year">2023</div>
+          <div class="spé-badge sisr">SISR</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-label">// projets slam</div>
+    <div class="list-rows reveal">
+
+      <div class="project-item slam">
+        <div class="proj-num b">04</div>
+        <div>
+          <div class="proj-name">Application web de gestion de parc informatique</div>
+          <div class="proj-desc">Développement d'une application PHP/MySQL permettant d'inventorier et gérer les équipements d'un parc informatique, avec interface d'administration et export de rapports.</div>
+          <div class="tag-row"><span class="tag hi-blue">PHP</span><span class="tag hi-blue">MySQL</span><span class="tag">HTML/CSS</span><span class="tag">Bootstrap</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <div class="proj-year">2024</div>
+          <div class="spé-badge slam">SLAM</div>
+        </div>
+      </div>
+
+      <div class="project-item slam">
+        <div class="proj-num b">05</div>
+        <div>
+          <div class="proj-name">Script Python de supervision réseau</div>
+          <div class="proj-desc">Outil Python de monitoring réseau : ping automatique, détection de pannes, alertes par email et génération de rapports CSV. Déployé sur un serveur Debian.</div>
+          <div class="tag-row"><span class="tag hi-blue">Python</span><span class="tag hi-blue">Bash</span><span class="tag">SMTP</span><span class="tag">Cron</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <div class="proj-year">2023</div>
+          <div class="spé-badge slam">SLAM</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Ambroise Col · BTS SIO SISR</p>
+  <p style="color:var(--green);opacity:0.55;">Île-de-France</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:0.07});
+  document.querySelectorAll('.reveal, .project-item').forEach(el => { if(!el.classList.contains('reveal')) el.classList.add('reveal'); obs.observe(el); });
+</script>
+</body>
+</html>

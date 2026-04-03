@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTS SIO — Ambroise Col</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── SPÉ CARDS ───────────────────────── */
+  .spe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 16px; overflow: hidden; }
+
+  .spe-card {
+    background: var(--surface); padding: 2.25rem;
+    transition: background 0.2s; position: relative;
+  }
+  .spe-card:hover { background: var(--bg3); }
+
+  /* SISR = chosen → stronger highlight */
+  .spe-card.chosen {
+    background: #1b221c;
+    border: none;
+  }
+  .spe-card.chosen::after {
+    content: 'option choisie ↗';
+    position: absolute; top: 1.25rem; right: 1.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--green); opacity: 0.7; letter-spacing: 0.06em;
+  }
+
+  .spe-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; }
+  .spe-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .spe-dot.green { background: var(--green); box-shadow: 0 0 10px rgba(74,222,128,0.45); }
+  .spe-dot.blue  { background: var(--blue); opacity: 0.7; }
+
+  .spe-code { font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
+  .spe-code.green { color: var(--green); }
+  .spe-code.blue  { color: var(--blue);  }
+
+  .spe-full { font-size: 11px; color: var(--fg-faint); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.03em; margin-bottom: 1rem; }
+  .spe-desc { font-size: 13px; color: var(--fg-muted); font-weight: 300; line-height: 1.75; margin-bottom: 1.25rem; }
+
+  /* ── COMMON CYBER BAND ───────────────── */
+  .cyber-band {
+    background: rgba(251,191,36,0.06);
+    border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 12px; padding: 1.75rem 2rem;
+    margin-bottom: 0;
+    display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
+  }
+
+  .cyber-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: rgba(251,191,36,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+
+  .cyber-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase;
+    opacity: 0.8; margin-bottom: 0.4rem;
+  }
+
+  .cyber-title { font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg); }
+  .cyber-desc { font-size: 13px; color: var(--fg-muted); font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+
+  /* ── SKILLS GRID ─────────────────────── */
+  .skills-wrap { display: flex; flex-direction: column; gap: 1px; }
+  .skill-row { display: flex; gap: 1px; }
+
+  .skill-row:first-child .card:first-child { border-radius: 16px 0 0 0; }
+  .skill-row:first-child .card:last-child  { border-radius: 0 16px 0 0; }
+  .skill-row:first-child .card:only-child  { border-radius: 16px 16px 0 0; }
+  .skill-row:last-child .card:first-child  { border-radius: 0 0 0 16px; }
+  .skill-row:last-child .card:last-child   { border-radius: 0 0 16px 0; }
+  .skill-row:last-child .card:only-child   { border-radius: 0 0 16px 16px; }
+  .skill-row .card { flex: 1; border-radius: 0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ambroise.col</a>
+  <ul class="nav-links">
+    <li><a href="index.html">~/</a></li>
+    <li><a href="bts.html" class="active">/bts</a></li>
+    <li><a href="documentation.html">/documentation</a></li>
+    <li><a href="veilles.html">/veilles</a></li>
+    <li><a href="contact.html">/contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="breadcrumb">~/bts</div>
+    <h1>BTS SIO —<br><span class="accent" style="font-style:italic;color:var(--green);">présentation.</span></h1>
+  </div>
+
+  <!-- SPÉCIALITÉS -->
+  <section class="page-section">
+    <div class="section-label">// spécialités bts sio</div>
+
+    <p style="font-size:15px;color:var(--fg-muted);font-weight:300;max-width:560px;line-height:1.8;margin-bottom:2.5rem;">
+      Le BTS SIO (<em>Services Informatiques aux Organisations</em>) propose deux spécialités. Ambroise a choisi l'option <strong style="color:var(--green);font-weight:500;">SISR</strong>.
+    </p>
+
+    <div class="spe-grid reveal" style="margin-bottom:1.5rem;">
+
+      <div class="spe-card chosen">
+        <div class="spe-header">
+          <div class="spe-dot green"></div>
+          <div class="spe-code green">SISR</div>
+        </div>
+        <div class="spe-full">Solutions d'Infrastructure, Systèmes et Réseaux</div>
+        <div class="spe-desc">
+          Conception, déploiement et maintenance des infrastructures informatiques : réseaux locaux, serveurs, sécurité, virtualisation et supervision. Le technicien SISR garantit la stabilité et la disponibilité des systèmes.
+        </div>
+        <div class="tag-row">
+          <span class="tag hi-green">Réseaux</span>
+          <span class="tag hi-green">Linux / Windows Server</span>
+          <span class="tag hi-green">Virtualisation</span>
+          <span class="tag">Administration</span>
+          <span class="tag">Supervision</span>
+        </div>
+      </div>
+
+      <div class="spe-card">
+        <div class="spe-header">
+          <div class="spe-dot blue"></div>
+          <div class="spe-code blue">SLAM</div>
+        </div>
+        <div class="spe-full">Solutions Logicielles et Applications Métiers</div>
+        <div class="spe-desc">
+          Conception, développement et maintenance de logiciels et d'applications web ou mobiles adaptées aux besoins métiers. Le technicien SLAM conçoit des solutions numériques de A à Z.
+        </div>
+        <div class="tag-row">
+          <span class="tag hi-blue">Développement web</span>
+          <span class="tag hi-blue">Base de données</span>
+          <span class="tag hi-blue">API</span>
+          <span class="tag">Python</span>
+          <span class="tag">PHP / SQL</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CYBER COMMUN -->
+    <div class="cyber-band reveal">
+      <div class="cyber-icon">🔒</div>
+      <div>
+        <div class="cyber-label">Commun aux deux spécialités</div>
+        <div class="cyber-title">Cybersécurité</div>
+        <div class="cyber-desc">
+          La cybersécurité est une composante transversale du BTS SIO, partagée par SISR et SLAM. Elle couvre la protection des systèmes et des données, la gestion des risques, la sensibilisation aux menaces et la mise en conformité (RGPD, politiques de sécurité).
+        </div>
+        <div class="tag-row">
+          <span class="tag hi-amber">Sécurité des réseaux</span>
+          <span class="tag hi-amber">Gestion des risques</span>
+          <span class="tag hi-amber">RGPD</span>
+          <span class="tag">Pare-feu</span>
+          <span class="tag">VPN</span>
+          <span class="tag">Analyse de vulnérabilités</span>
+          <span class="tag">SSL / TLS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="page-section">
+    <div class="section-label">// compétences techniques</div>
+    <h2 style="margin-bottom:2.5rem;">Stack &amp;<br>outils.</h2>
+    <div class="skills-wrap reveal">
+      <div class="skill-row">
+        <div class="card">
+          <div class="skill-cat">NET</div>
+          <div class="skill-title">Réseaux</div>
+          <div class="tag-row">
+            <span class="tag hi-green">TCP/IP</span><span class="tag hi-green">VLAN</span><span class="tag">OSPF</span><span class="tag">Cisco IOS</span><span class="tag">pfSense</span><span class="tag">DNS / DHCP</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-cat">SYS</div>
+          <div class="skill-title">Systèmes</div>
+          <div class="tag-row">
+            <span class="tag hi-green">Linux</span><span class="tag hi-green">Debian</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span><span class="tag">GPO</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="card">
+          <div class="skill-cat">VRT</div>
+          <div class="skill-title">Virtualisation</div>
+          <div class="tag-row">
+            <span class="tag hi-green">Proxmox</span><span class="tag hi-green">Docker</span><span class="tag">VMware ESXi</span><span class="tag">LXC</span><span class="tag">VirtualBox</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-cat amber">SEC</div>
+          <div class="skill-title">Cybersécurité</div>
+          <div class="tag-row">
+            <span class="tag hi-amber">Wireshark</span><span class="tag hi-amber">Nmap</span><span class="tag">Snort</span><span class="tag">VPN</span><span class="tag">Pare-feu</span><span class="tag">SSL/TLS</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="card">
+          <div class="skill-cat">OPS</div>
+          <div class="skill-title">Scripts &amp; Automatisation</div>
+          <div class="tag-row">
+            <span class="tag hi-green">Bash</span><span class="tag hi-green">PowerShell</span><span class="tag">Ansible</span><span class="tag">Git</span><span class="tag">Cron</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="skill-cat">SRV</div>
+          <div class="skill-title">Services réseau</div>
+          <div class="tag-row">
+            <span class="tag">Nginx</span><span class="tag">Apache</span><span class="tag">Postfix</span><span class="tag">Samba</span><span class="tag">NFS</span><span class="tag">RADIUS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="page-section">
+    <div class="section-label">// certifications</div>
+    <h2 style="margin-bottom:2.5rem;">Formations<br>&amp; certs.</h2>
+    <div class="card-grid auto reveal">
+      <div class="card">
+        <div class="cert-name">BTS SIO — SISR</div>
+        <div class="cert-org">Lycée technique</div>
+        <div class="cert-status ok"><span class="cert-dot ok"></span>en cours · 2024</div>
+      </div>
+      <div class="card">
+        <div class="cert-name">CCNA Intro to Networks</div>
+        <div class="cert-org">Cisco NetAcad</div>
+        <div class="cert-status ok"><span class="cert-dot ok"></span>obtenu · 2023</div>
+      </div>
+      <div class="card">
+        <div class="cert-name">NSE 1 &amp; 2</div>
+        <div class="cert-org">Fortinet</div>
+        <div class="cert-status ok"><span class="cert-dot ok"></span>obtenu · 2023</div>
+      </div>
+      <div class="card">
+        <div class="cert-name">Google IT Support</div>
+        <div class="cert-org">Google / Coursera</div>
+        <div class="cert-status ok"><span class="cert-dot ok"></span>obtenu · 2022</div>
+      </div>
+      <div class="card">
+        <div class="cert-name">CompTIA Network+</div>
+        <div class="cert-org">CompTIA</div>
+        <div class="cert-status wip"><span class="cert-dot wip"></span>en préparation</div>
+      </div>
+      <div class="card">
+        <div class="cert-name">AZ-900</div>
+        <div class="cert-org">Microsoft Azure</div>
+        <div class="cert-status wip"><span class="cert-dot wip"></span>en préparation</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Ambroise Col · BTS SIO SISR</p>
+  <p style="color:var(--green);opacity:0.55;">Île-de-France</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:0.07});
+  document.querySelectorAll('.reveal, .card, .project-item').forEach(el => { if(!el.classList.contains('reveal')) el.classList.add('reveal'); obs.observe(el); });
+</script>
+</body>
+</html>
